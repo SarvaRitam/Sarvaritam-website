@@ -229,7 +229,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button class="bg-gradient-to-r from-green-700 to-green-800 text-white px-8 py-4 rounded-full font-semibold hover:from-green-800 hover:to-green-900 transition-all duration-300 transform hover:scale-105 premium-shadow">
+                            <button onclick="showAshwagandhaBenefits()" class="bg-gradient-to-r from-green-700 to-green-800 text-white px-8 py-4 rounded-full font-semibold hover:from-green-800 hover:to-green-900 transition-all duration-300 transform hover:scale-105 premium-shadow">
                                 Discover Benefits →
                             </button>
                         </div>
@@ -264,7 +264,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button class="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-full font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 premium-shadow">
+                            <button onclick="showTeaBlendBenefits()" class="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-full font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 premium-shadow">
                                 Explore Blend →
                             </button>
                         </div>
@@ -363,6 +363,132 @@
             </div>
         </div>
     </section>
+
+    <!-- Ashwagandha Benefits Modal -->
+    <div id="ashwagandha-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4" style="z-index: 9999;">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto premium-shadow relative">
+            <button onclick="closeAshwagandhaBenefits()" class="absolute top-6 right-6 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-all duration-200 z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-4">Benefits of Ashwagandha</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card 1: Stress Relief -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+                        <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center">
+                            <div class="text-4xl">🧘‍♀️</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Reduces Stress & Anxiety</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">Helps regulate the stress response and promotes a calmer state of mind.</p>
+                    </div>
+                    
+                    <!-- Card 2: Sleep -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+                        <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center">
+                            <div class="text-4xl">😴</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Improves Sleep</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">Supports deeper, more restorative sleep by calming the mind and body.</p>
+                    </div>
+                    
+                    <!-- Card 3: Energy -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+                        <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center">
+                            <div class="text-4xl">🏃‍♂️</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Boosts Energy Levels</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">Increases stamina and focus throughout the day without jitters.</p>
+                    </div>
+                    
+                    <!-- Card 4: Immune -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+                        <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center">
+                            <div class="text-4xl">🌿</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Supports Immune Function</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">Helps strengthen the immune system and overall vitality.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <div class="bg-gradient-to-r from-green-100 to-green-200 p-6 rounded-2xl border border-green-300">
+                        <p class="text-green-800 font-medium mb-2">🌟 Premium Quality Ashwagandha</p>
+                        <p class="text-gray-700 text-sm">Traditional Ayurvedic formula crafted for modern wellness needs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tea Blend Benefits Modal -->
+    <div id="tea-blend-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4" style="z-index: 9999;">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto premium-shadow relative">
+            <button onclick="closeTeaBlendBenefits()" class="absolute top-6 right-6 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-all duration-200 z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-4">Benefits of Tulsi, Ginger & Rose Herbal Tea</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card 1: Boosts Immunity -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+                        <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center">
+                            <div class="text-4xl">🌿</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Boosts Immunity</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">Rich in antioxidants to strengthen your body's defense system.</p>
+                    </div>
+                    
+                    <!-- Card 2: Aids Digestion -->
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+                        <div class="w-full h-32 bg-gradient-to-br from-pink-200 to-pink-300 rounded-xl mb-4 flex items-center justify-center">
+                            <div class="text-4xl">🫚</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Aids Digestion</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">Helps soothe the stomach and supports healthy digestion.</p>
+                    </div>
+                    
+                    <!-- Card 3: Reduces Stress -->
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+                        <div class="w-full h-32 bg-gradient-to-br from-pink-200 to-pink-300 rounded-xl mb-4 flex items-center justify-center">
+                            <div class="text-4xl">🌹</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Reduces Stress</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">The calming aroma and herbs help relax the mind.</p>
+                    </div>
+                    
+                    <!-- Card 4: Overall Wellness -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+                        <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center">
+                            <div class="text-4xl">☕</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Promotes Overall Wellness</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">A refreshing blend that nurtures body and mind.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <div class="bg-gradient-to-r from-green-100 to-pink-100 p-6 rounded-2xl border border-green-300">
+                        <p class="text-green-800 font-medium mb-2">🌸 Premium Herbal Tea Blend</p>
+                        <p class="text-gray-700 text-sm">Sacred Tulsi, warming Ginger, and soothing Rose petals in perfect harmony</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gradient-to-br from-green-900 to-green-700 text-white py-16 relative overflow-hidden">
@@ -508,6 +634,57 @@
                 nav.classList.remove('shadow-xl');
             }
         });
+
+        // Ashwagandha Benefits Modal Functions
+        function showAshwagandhaBenefits() {
+            const modal = document.getElementById('ashwagandha-modal');
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeAshwagandhaBenefits() {
+            const modal = document.getElementById('ashwagandha-modal');
+            modal.classList.add('hidden');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Tea Blend Benefits Modal Functions
+        function showTeaBlendBenefits() {
+            const modal = document.getElementById('tea-blend-modal');
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeTeaBlendBenefits() {
+            const modal = document.getElementById('tea-blend-modal');
+            modal.classList.add('hidden');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modals when clicking outside
+        document.getElementById('ashwagandha-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAshwagandhaBenefits();
+            }
+        });
+
+        document.getElementById('tea-blend-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeTeaBlendBenefits();
+            }
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAshwagandhaBenefits();
+                closeTeaBlendBenefits();
+            }
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96cf9baf17983c04',t:'MTc1NDgzMDExMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96cfc3f7138445a3',t:'MTc1NDgzMTc2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
