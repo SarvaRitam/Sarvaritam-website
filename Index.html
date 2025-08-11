@@ -6,7 +6,7 @@
   <title>SarvaRitam™ Businesses LLP - The Essence of All That is Right and Natural</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Consulting/Landing Styles -->
+  <!-- Landing + Consulting styles -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap');
 
@@ -30,54 +30,42 @@
     .luxury-button { background: linear-gradient(45deg, #450a0a, #7f1d1d); box-shadow: 0 8px 25px rgba(69,10,10,0.4); transition: all .3s ease; }
     .luxury-button:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(69,10,10,0.6); background: linear-gradient(45deg, #7f1d1d, #991b1b); }
     .trademark { font-size:.7em; vertical-align: super; opacity: .8; }
+  </style>
 
-    .glass-text {
-      position: fixed; top: 15%; left: 50%; transform: translate(-50%,-50%);
-      z-index: 10; pointer-events: none; transition: all .6s ease;
-      font-size: 3rem; font-weight: 700;
-      background: linear-gradient(45deg, rgba(255,255,255,.9), rgba(255,255,255,.6));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      text-shadow: 0 0 20px rgba(255,255,255,.3);
-      backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 2rem;
-      background-color: rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
-      display: none;
-    }
-
-    /* === Scoped styles for the Wellness site to prevent collisions === */
-    #wellness-root {
-      --sr-green1:#0f2419; --sr-green2:#1a3b2e; --sr-green3:#2d5a47; --sr-green4:#4a7c59;
-    }
-    #wellness-root .premium-font { font-family: 'Playfair Display', serif; }
-    #wellness-root .premium-shadow { box-shadow: 0 8px 32px rgba(34,197,94,.12), 0 2px 8px rgba(26,59,46,.08); }
-    #wellness-root .premium-border { border: 1px solid rgba(34,197,94,.2); }
-    #wellness-root .gold-accent { background: linear-gradient(45deg, #22c55e, #16a34a); }
-    #wellness-root .text-gold { color: #22c55e; }
-    #wellness-root .bg-premium-green { background: linear-gradient(135deg, #1a3b2e, #2d5a47); }
-    #wellness-root .bg-premium-light { background: linear-gradient(135deg, #4a7c59, #22c55e); }
-    #wellness-root .luxury-card {
-      background: linear-gradient(145deg, rgba(255,255,255,.95), rgba(255,255,255,.9));
-      border: 1px solid rgba(34,197,94,.1); backdrop-filter: blur(20px);
-    }
-    #wellness-root .gradient-bg {
-      background: linear-gradient(135deg, var(--sr-green1) 0%, var(--sr-green2) 25%, var(--sr-green3) 75%, var(--sr-green4) 100%);
+  <!-- Wellness (verbatim) styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .premium-font { font-family: 'Playfair Display', serif; }
+    .gradient-bg { 
+      background: linear-gradient(135deg, #0f2419 0%, #1a3b2e 25%, #2d5a47 75%, #4a7c59 100%);
       position: relative;
     }
-    #wellness-root .gradient-bg::before{
-      content:'';position:absolute;inset:0;
-      background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="0.3" fill="rgba(255,255,255,0.02)"/><circle cx="50" cy="10" r="0.4" fill="rgba(255,255,255,0.025)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      opacity:.3;
+    .gradient-bg::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="0.3" fill="rgba(255,255,255,0.02)"/><circle cx="50" cy="10" r="0.4" fill="rgba(255,255,255,0.025)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
     }
-    #wellness-root .card-hover { transition: all .4s cubic-bezier(.4,0,.2,1); backdrop-filter: blur(10px); }
-    #wellness-root .card-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 25px 50px rgba(139,69,19,.15), 0 10px 25px rgba(26,59,46,.1); }
-    #wellness-root .fade-in { animation: wellnessFade .8s ease-out; }
-    @keyframes wellnessFade { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+    .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px); }
+    .card-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 25px 50px rgba(139, 69, 19, 0.15), 0 10px 25px rgba(26, 59, 46, 0.1); }
+    .fade-in { animation: fadeIn 1s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    .premium-shadow { box-shadow: 0 8px 32px rgba(34, 197, 94, 0.12), 0 2px 8px rgba(26, 59, 46, 0.08); }
+    .premium-border { border: 1px solid rgba(34, 197, 94, 0.2); }
+    .gold-accent { background: linear-gradient(45deg, #22c55e, #16a34a); }
+    .text-gold { color: #22c55e; }
+    .bg-premium-green { background: linear-gradient(135deg, #1a3b2e, #2d5a47); }
+    .bg-premium-light { background: linear-gradient(135deg, #4a7c59, #22c55e); }
+    .luxury-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+      border: 1px solid rgba(34, 197, 94, 0.1);
+      backdrop-filter: blur(20px);
+    }
   </style>
 </head>
 
 <body class="bg-gray-900 overflow-x-hidden">
-
-  <!-- Floating glass text for Consulting view -->
-  <div id="glass-text" class="glass-text">Premium Business Consulting</div>
 
   <!-- ===== Landing Page ===== -->
   <section id="landing-page" class="visible-section">
@@ -90,7 +78,7 @@
 
       <div class="text-center text-white fade-in max-w-6xl mx-auto px-4 relative z-10">
         <div class="mb-16">
-          <div class="w-32 h-32 glass-effect rounded-full mx-auto flex items-center justify-center text-6xl mb-8 shadow-2xl">👑</div>
+          <div class="w-32 h-32 rounded-full mx-auto flex items-center justify-center text-6xl mb-8 shadow-2xl">👑</div>
           <h1 class="text-6xl md:text-8xl font-bold mb-4 heading-font">SarvaRitam<span class="trademark">™</span></h1>
           <h2 class="text-3xl md:text-4xl font-light mb-6">Businesses LLP</h2>
           <div class="w-40 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8"></div>
@@ -102,13 +90,12 @@
 
         <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <!-- Business Consulting -->
-          <div class="glass-effect rounded-3xl p-10 card-hover cursor-pointer group" onclick="showConsulting()">
+          <div class="rounded-3xl p-10 card-hover cursor-pointer group" onclick="showConsulting()">
             <div class="text-center">
               <div class="w-24 h-24 bg-gradient-to-br from-red-900 to-red-950 rounded-full mx-auto flex items-center justify-center text-4xl text-white mb-8 group-hover:scale-110 transition-transform shadow-xl">💼</div>
               <h3 class="text-3xl font-bold text-white mb-6 heading-font">Premium Business Consulting</h3>
               <p class="text-amber-100 mb-8 leading-relaxed text-lg font-medium">
-                Elite strategic guidance from sector experts in ESG consulting,
-                supply chain optimization, and comprehensive financial solutions.
+                Elite strategic guidance in ESG, supply chain, and finance.
               </p>
               <button class="bg-gradient-to-r from-red-900 to-red-950 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-red-800 hover:to-red-900 transition-all transform hover:scale-105 shadow-lg">
                 Explore Premium Services
@@ -117,13 +104,12 @@
           </div>
 
           <!-- Ayurvedic Wellness -->
-          <div class="glass-effect rounded-3xl p-10 card-hover cursor-pointer group" onclick="showWellness()">
+          <div class="rounded-3xl p-10 card-hover cursor-pointer group" onclick="showWellness()">
             <div class="text-center">
               <div class="w-24 h-24 bg-gradient-to-br from-emerald-700 to-green-800 rounded-full mx-auto flex items-center justify-center text-4xl text-white mb-8 group-hover:scale-110 transition-transform shadow-xl">🌿</div>
               <h3 class="text-3xl font-bold text-white mb-6 heading-font">Ayurvedic Wellness</h3>
               <p class="text-amber-100 mb-8 leading-relaxed text-lg font-medium">
-                Timeless healing wisdom for modern wellness. Discover holistic health solutions
-                rooted in traditional Ayurvedic practices and natural remedies.
+                Timeless healing wisdom for modern wellness.
               </p>
               <button class="bg-gradient-to-r from-emerald-700 to-green-800 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-emerald-800 hover:to-green-900 transition-all transform hover:scale-105 shadow-lg">
                 Explore Wellness Portal
@@ -135,11 +121,11 @@
     </div>
   </section>
 
-  <!-- ===== Business Consulting Page ===== -->
+  <!-- ===== Business Consulting Page (no glass overlay) ===== -->
   <section id="consulting-page" class="hidden-section">
     <div class="luxury-red-bg min-h-screen">
       <!-- Nav -->
-      <nav class="glass-effect shadow-lg fixed w-full top-0 z-50 backdrop-blur-md">
+      <nav class="shadow-lg fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-20">
             <div class="flex-shrink-0">
@@ -148,9 +134,7 @@
                   <span class="text-white font-bold text-lg">SR</span>
                 </div>
                 <div>
-                  <h1 id="nav-title" class="text-xl font-bold text-white heading-font transition-all duration-500">
-                    SarvaRitam<span class="trademark">™</span>
-                  </h1>
+                  <h1 id="nav-title" class="text-xl font-bold text-white heading-font">SarvaRitam<span class="trademark">™</span></h1>
                   <p class="text-xs text-red-200">Business Consulting</p>
                 </div>
               </div>
@@ -174,94 +158,74 @@
             <div class="w-32 h-32 bg-white rounded-full mx-auto flex items-center justify-center text-6xl mb-8 shadow-2xl">👑</div>
             <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 heading-font">Premium Business Consulting Services</h1>
             <p class="text-xl md:text-2xl text-red-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Strategic solutions that align your enterprise with sustainable excellence and natural business order
+              Strategic solutions for sustainable excellence
             </p>
             <div class="w-48 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
           </div>
         </div>
       </div>
 
-      <!-- Services -->
+      <!-- Services + Contact + Footer (same as before) -->
       <div id="services" class="py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-20">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 heading-font">Our Expertise</h2>
-            <p class="text-xl text-red-100 max-w-4xl mx-auto">Sector experts delivering comprehensive consulting solutions across three core domains</p>
+            <p class="text-xl text-red-100 max-w-4xl mx-auto">ESG • Supply Chain • Finance</p>
           </div>
 
           <div class="grid lg:grid-cols-3 gap-8 mb-20">
-            <!-- ESG -->
             <div class="bg-white rounded-3xl p-8 luxury-shadow card-hover">
               <div class="text-center mb-6">
                 <div class="w-20 h-20 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full mx-auto flex items-center justify-center text-3xl text-white mb-6">🌱</div>
                 <h3 class="text-2xl font-bold text-red-900 heading-font mb-4">ESG Consulting</h3>
-                <div class="w-16 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto"></div>
               </div>
-              <div class="space-y-4">
-                <p class="text-gray-700">Comprehensive ESG report writing and investor/regulatory reporting</p>
-                <p class="text-gray-700">Policy conceptualization to full implementation</p>
-                <p class="text-gray-700">Implementing ESG across all business activities</p>
-                <p class="text-gray-700">Sustainability strategy and carbon footprint management</p>
+              <div class="space-y-3">
+                <p class="text-gray-700">ESG reports & regulatory filings</p>
+                <p class="text-gray-700">Policy to implementation</p>
+                <p class="text-gray-700">Carbon & sustainability strategy</p>
               </div>
             </div>
 
-            <!-- Supply Chain -->
             <div class="bg-white rounded-3xl p-8 luxury-shadow card-hover">
               <div class="text-center mb-6">
                 <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full mx-auto flex items-center justify-center text-3xl text-white mb-6">🔗</div>
-                <h3 class="text-2xl font-bold text-red-900 heading-font mb-4">Supply Chain Consulting</h3>
-                <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
+                <h3 class="text-2xl font-bold text-red-900 heading-font mb-4">Supply Chain</h3>
               </div>
-              <div class="space-y-4">
-                <p class="text-gray-700">End-to-end supply chain consultation</p>
-                <p class="text-gray-700">Strategic sourcing optimization</p>
-                <p class="text-gray-700">Supply chain efficiency solutions</p>
-                <p class="text-gray-700">Risk management and contingency planning</p>
+              <div class="space-y-3">
+                <p class="text-gray-700">End-to-end consulting</p>
+                <p class="text-gray-700">Strategic sourcing</p>
+                <p class="text-gray-700">Efficiency & risk</p>
               </div>
             </div>
 
-            <!-- Finance -->
             <div class="bg-white rounded-3xl p-8 luxury-shadow card-hover">
               <div class="text-center mb-6">
                 <div class="w-20 h-20 bg-gradient-to-br from-yellow-600 to-orange-600 rounded-full mx-auto flex items-center justify-center text-3xl text-white mb-6">💰</div>
-                <h3 class="text-2xl font-bold text-red-900 heading-font mb-4">Finance Consulting</h3>
-                <div class="w-16 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 mx-auto"></div>
+                <h3 class="text-2xl font-bold text-red-900 heading-font mb-4">Finance</h3>
               </div>
-              <div class="space-y-4">
-                <p class="text-gray-700">Comprehensive tax solutions</p>
-                <p class="text-gray-700">Financial strategy and planning</p>
-                <p class="text-gray-700">Investment advisory services</p>
-                <p class="text-gray-700">Financial compliance and regulatory support</p>
+              <div class="space-y-3">
+                <p class="text-gray-700">Tax & planning</p>
+                <p class="text-gray-700">Advisory</p>
+                <p class="text-gray-700">Compliance</p>
               </div>
             </div>
           </div>
 
-          <!-- Why Choose Us -->
-          <div class="bg-white rounded-3xl p-12 luxury-shadow">
-            <div class="text-center mb-12">
-              <h3 class="text-4xl font-bold text-red-900 mb-6 heading-font">Why Choose SarvaRitam<span class="trademark">™</span></h3>
-              <p class="text-xl text-gray-700">Where ancient wisdom meets modern business consulting excellence</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div class="text-center"><div class="w-16 h-16 bg-red-100 rounded-full mx-auto flex items-center justify-center text-3xl mb-4">🎯</div><h4 class="font-bold text-red-900 mb-3 text-lg">Sector Expertise</h4><p class="text-gray-600">Deep industry knowledge and specialized experience</p></div>
-              <div class="text-center"><div class="w-16 h-16 bg-red-100 rounded-full mx-auto flex items-center justify-center text-3xl mb-4">🌿</div><h4 class="font-bold text-red-900 mb-3 text-lg">Holistic Approach</h4><p class="text-gray-600">Comprehensive solutions for sustainable growth</p></div>
-              <div class="text-center"><div class="w-16 h-16 bg-red-100 rounded-full mx-auto flex items-center justify-center text-3xl mb-4">⚡</div><h4 class="font-bold text-red-900 mb-3 text-lg">Implementation Focus</h4><p class="text-gray-600">From strategy to execution with measurable results</p></div>
-              <div class="text-center"><div class="w-16 h-16 bg-red-100 rounded-full mx-auto flex items-center justify-center text-3xl mb-4">🤝</div><h4 class="font-bold text-red-900 mb-3 text-lg">Partnership Approach</h4><p class="text-gray-600">Long-term relationships built on trust and results</p></div>
-            </div>
+          <div class="bg-white rounded-3xl p-12 luxury-shadow text-center">
+            <h3 class="text-4xl font-bold text-red-900 mb-6 heading-font">Why Choose SarvaRitam<span class="trademark">™</span></h3>
+            <p class="text-xl text-gray-700">Sector expertise • Holistic approach • Execution focus • Partnerships</p>
           </div>
         </div>
       </div>
 
-      <!-- Contact -->
       <div id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 heading-font">Get in Touch</h2>
-            <p class="text-xl text-red-100">Ready to transform your business with our expertise?</p>
+            <p class="text-xl text-red-100">Ready to transform your business?</p>
           </div>
 
           <div class="grid lg:grid-cols-2 gap-16">
-            <!-- Form -->
             <div class="bg-white rounded-3xl p-8 luxury-shadow">
               <h3 class="text-3xl font-bold text-red-900 mb-6 heading-font">Request Service</h3>
               <form class="space-y-6" onsubmit="handleFormSubmit(event)">
@@ -290,13 +254,11 @@
               </form>
             </div>
 
-            <!-- Contact Info -->
             <div class="space-y-8">
               <div>
                 <h3 class="text-3xl font-bold text-white mb-6 heading-font">Contact Information</h3>
                 <p class="text-red-100 mb-8 leading-relaxed text-lg">
-                  Connect with our sector experts to discuss how we can help transform your business
-                  through strategic ESG, supply chain, and financial consulting solutions.
+                  Connect with our sector experts to discuss your ESG, supply chain, and finance needs.
                 </p>
               </div>
 
@@ -315,7 +277,6 @@
         </div>
       </div>
 
-      <!-- Footer -->
       <footer class="py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-6xl mx-auto text-center">
           <div class="flex items-center justify-center space-x-4 mb-6">
@@ -337,231 +298,500 @@
     </div>
   </section>
 
-  <!-- ===== Ayurvedic Wellness Page (Attached code, safely scoped) ===== -->
+  <!-- ===== Ayurvedic Wellness Page (your full code, verbatim) ===== -->
   <section id="wellness-page" class="hidden-section">
-    <div id="wellness-root">
-      <!-- Top bar -->
-      <nav class="bg-white/95 backdrop-blur-md premium-shadow fixed w-full top-0 z-50 premium-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between items-center h-18">
-            <div class="flex items-center">
-              <div class="text-3xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent">
-                SarvaRitam<sup class="text-xs">™</sup>
-              </div>
-              <div class="ml-2 text-xs text-green-600 font-medium">AYURVEDIC WELLNESS</div>
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md premium-shadow fixed w-full top-0 z-50 premium-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-18">
+          <div class="flex items-center">
+            <div class="text-3xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent">SarvaRitam<sup class="text-xs">™</sup></div>
+            <div class="ml-2 text-xs text-green-600 font-medium">AYURVEDIC WELLNESS</div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a href="#home" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">Home</a>
+              <a href="#about" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">About</a>
+              <a href="#services" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">Products</a>
+              <a href="#contact" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">Contact</a>
+              <button onclick="showLanding()" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">← Back to Home</button>
             </div>
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-8">
-                <a href="#home" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">About</a>
-                <a href="#services" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">Products</a>
-                <a href="#contact" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">Contact</a>
-                <!-- Back to Home -->
-                <button onclick="showLanding()" class="text-gray-700 hover:text-green-700 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-green-50 rounded-lg">← Back to Home</button>
-              </div>
-            </div>
-            <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-blue-600">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-              </svg>
+          </div>
+          <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-blue-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-green-800">Home</a>
+          <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-green-800">About</a>
+          <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-green-800">Services</a>
+          <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-green-800">Contact</a>
+          <button onclick="showLanding()" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-green-800">← Back to Home</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-20 pb-20 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
+        <div class="text-center fade-in">
+          <div class="inline-block mb-6">
+            <div class="w-20 h-1 gold-accent mx-auto mb-4 rounded-full"></div>
+            <p class="text-green-300 font-medium tracking-widest text-sm uppercase">Premium Ayurvedic Wellness</p>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 premium-font leading-tight">
+            Welcome to
+            <span class="block text-gold bg-gradient-to-r from-green-300 to-green-400 bg-clip-text text-transparent">SarvaRitam<sup class="text-2xl">™</sup></span>
+          </h1>
+          <p class="text-2xl text-green-100 mb-6 max-w-4xl mx-auto premium-font italic">
+            "The Essence of All That is Right and Natural"
+          </p>
+          <div class="w-32 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto mb-8"></div>
+          <p class="text-lg text-green-100 mb-6 max-w-4xl mx-auto leading-relaxed">
+            Born from the Sanskrit <span class="text-green-300 font-semibold">Sarva</span> (all, complete) and <span class="text-green-300 font-semibold">Ritam</span> (truth, cosmic order), we carry the wisdom of the Maharshis and the timeless remedies our grandmothers swore by.
+          </p>
+          <p class="text-2xl text-white font-medium mb-12 max-w-3xl mx-auto premium-font">
+            "Wisdom of the Maharshis. Love of Your Grandmother."
+          </p>
+          <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button onclick="wellnessScrollTo('services')" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-4 rounded-full font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 premium-shadow text-lg">
+              Explore Nature's Remedies →
+            </button>
+            <button onclick="wellnessScrollTo('about')" class="border-2 border-green-400 text-green-100 px-10 py-4 rounded-full font-semibold hover:bg-green-400 hover:text-green-900 transition-all duration-300 transform hover:scale-105 text-lg">
+              Our Story
             </button>
           </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-          <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-green-800">Home</a>
-            <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-green-800">About</a>
-            <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-green-800">Products</a>
-            <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-green-800">Contact</a>
-            <button onclick="showLanding()" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-green-800">← Back to Home</button>
-          </div>
-        </div>
-      </nav>
+      </div>
+      <div class="absolute top-20 left-10 w-32 h-32 bg-green-400/10 rounded-full blur-xl"></div>
+      <div class="absolute bottom-20 right-10 w-40 h-40 bg-green-500/10 rounded-full blur-xl"></div>
+    </section>
 
-      <!-- === The rest of your attached wellness HTML stays unchanged === -->
-      <!-- Hero -->
-      <section id="home" class="gradient-bg pt-20 pb-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/20"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
-          <div class="text-center fade-in">
-            <div class="inline-block mb-6">
-              <div class="w-20 h-1 gold-accent mx-auto mb-4 rounded-full"></div>
-              <p class="text-green-300 font-medium tracking-widest text-sm uppercase">Premium Ayurvedic Wellness</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-green-50 to-green-100 relative">
+      <div class="absolute inset-0 bg-white/60"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-block mb-4">
+            <div class="w-16 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto mb-3 rounded-full"></div>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-6">About SarvaRitam™<sup class="text-xl"></sup></h2>
+          <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            We're dedicated to bringing authentic Ayurvedic wellness solutions that honor ancient traditions while meeting modern health needs with uncompromising quality and purity.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-3xl font-semibold premium-font text-green-800 mb-6">Our Ayurvedic Journey</h3>
+              <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                We bring ancient herbal knowledge into your everyday life with pure, potent, and honest products. From stress-relieving Ashwagandha to our calming Tulsi + Ginger + Rose tea blend, each formula is crafted to help you live stronger, calmer, and healthier.
+              </p>
+              <div class="bg-gradient-to-r from-green-100 to-green-200 p-6 rounded-2xl premium-border">
+                <p class="text-gray-800 text-xl italic text-center premium-font">
+                  "Nature knew it first. Your grandmother confirmed it. We simply bottled it."
+                </p>
+              </div>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 premium-font leading-tight">
-              Welcome to
-              <span class="block text-gold bg-gradient-to-r from-green-300 to-green-400 bg-clip-text text-transparent">SarvaRitam<sup class="text-2xl">™</sup></span>
-            </h1>
-            <p class="text-2xl text-green-100 mb-6 max-w-4xl mx-auto premium-font italic">"The Essence of All That is Right and Natural"</p>
-            <div class="w-32 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto mb-8"></div>
-            <p class="text-lg text-green-100 mb-6 max-w-4xl mx-auto leading-relaxed">
-              Born from the Sanskrit <span class="text-green-300 font-semibold">Sarva</span> (all, complete) and <span class="text-green-300 font-semibold">Ritam</span> (truth, cosmic order), we carry the wisdom of the Maharshis and the timeless remedies our grandmothers swore by.
-            </p>
-            <p class="text-2xl text-white font-medium mb-12 max-w-3xl mx-auto premium-font">"Wisdom of the Maharshis. Love of Your Grandmother."</p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button onclick="wellnessScrollTo('services')" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-4 rounded-full font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 premium-shadow text-lg">Explore Nature's Remedies →</button>
-              <button onclick="wellnessScrollTo('about')" class="border-2 border-green-400 text-green-100 px-10 py-4 rounded-full font-semibold hover:bg-green-400 hover:text-green-900 transition-all duration-300 transform hover:scale-105 text-lg">Our Story</button>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center p-6 luxury-card rounded-2xl premium-shadow">
+                <div class="text-3xl font-bold text-green-600 premium-font">100%</div>
+                <div class="text-gray-700 font-semibold">Natural & Pure</div>
+              </div>
+              <div class="text-center p-6 luxury-card rounded-2xl premium-shadow">
+                <div class="text-3xl font-bold text-green-700 premium-font">2025</div>
+                <div class="text-gray-700 font-semibold">Founded</div>
+              </div>
+            </div>
+          </div>
+          <div class="luxury-card p-10 rounded-3xl premium-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/30 to-green-300/30 rounded-full -translate-y-16 translate-x-16"></div>
+            <div class="relative z-10">
+              <div class="text-7xl mb-6">🌿</div>
+              <h4 class="text-2xl font-semibold premium-font text-green-800 mb-4">Tradition Meets Excellence</h4>
+              <p class="text-gray-700 text-lg leading-relaxed">
+                We combine time-tested Ayurvedic formulations with modern quality control processes to deliver products that are both authentic and safe for today's lifestyle.
+              </p>
+              <div class="mt-6 flex items-center space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-800">Premium Quality Assured</div>
+                  <div class="text-gray-600 text-sm">Rigorous testing & certification</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="absolute top-20 left-10 w-32 h-32 bg-green-400/10 rounded-full blur-xl"></div>
-        <div class="absolute bottom-20 right-10 w-40 h-40 bg-green-500/10 rounded-full blur-xl"></div>
-      </section>
+      </div>
+    </section>
 
-      <!-- About, Products, Newsletter, Contact, Modals, Footer from attached file -->
-      <!-- (Exact markup from your Index.html pasted here unchanged for brevity) -->
-
-      <!-- ===== START pasted content from your Index.html (shortened to keep reply readable) ===== -->
-      <!-- About -->
-      <section id="about" class="py-20 bg-gradient-to-br from-green-50 to-green-100 relative">
-        <div class="absolute inset-0 bg-white/60"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div class="text-center mb-16">
-            <div class="inline-block mb-4"><div class="w-16 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto mb-3 rounded-full"></div></div>
-            <h2 class="text-4xl md:text-5xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-6">About SarvaRitam™</h2>
-            <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">We're dedicated to bringing authentic Ayurvedic wellness solutions...</p>
+    <!-- Products Section -->
+    <section id="services" class="py-20 bg-gradient-to-br from-green-900 to-green-700 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="absolute top-0 left-0 w-full h-full opacity-10">
+        <div class="absolute top-20 left-20 w-64 h-64 bg-green-400 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-20 w-80 h-80 bg-green-500 rounded-full blur-3xl"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-block mb-6">
+            <div class="w-20 h-1 gold-accent mx-auto mb-4 rounded-full"></div>
+            <p class="text-green-300 font-medium tracking-widest text-sm uppercase">Premium Collection</p>
           </div>
-          <!-- ... keep your original 'About' grid/content exactly ... -->
+          <h2 class="text-4xl md:text-5xl font-bold premium-font text-white mb-6">Our Signature Products</h2>
+          <p class="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
+            We currently offer two premium Ayurvedic products, carefully crafted to support your wellness journey naturally with the finest ingredients and traditional wisdom.
+          </p>
         </div>
-      </section>
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div class="luxury-card p-10 rounded-3xl card-hover relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-200/20 to-green-300/20 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10">
+              <div class="text-7xl mb-8 text-center transform group-hover:scale-110 transition-transform duration-300">🌿</div>
+              <div class="text-center mb-6">
+                <div class="inline-block px-4 py-1 bg-gradient-to-r from-green-100 to-green-200 rounded-full text-green-800 text-sm font-semibold mb-4">
+                  STRESS RELIEF
+                </div>
+                <h3 class="text-3xl font-bold premium-font text-green-800 mb-2">Premium Ashwagandha</h3>
+                <div class="w-16 h-0.5 bg-gradient-to-r from-green-600 to-green-700 mx-auto"></div>
+              </div>
+              <p class="text-gray-700 mb-8 text-center text-lg leading-relaxed">
+                Our stress-relieving Ashwagandha formula, crafted using traditional methods to help you manage daily stress and build natural resilience for a stronger, calmer you.
+              </p>
+              <div class="space-y-4 mb-8">
+                <div class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">100% Pure & Natural</span></div>
+                <div class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">Traditional Ayurvedic Formula</span></div>
+                <div class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">Stress & Anxiety Relief</span></div>
+              </div>
+              <div class="text-center">
+                <button onclick="showAshwagandhaBenefits()" class="bg-gradient-to-r from-green-700 to-green-800 text-white px-8 py-4 rounded-full font-semibold hover:from-green-800 hover:to-green-900 transition-all duration-300 transform hover:scale-105 premium-shadow">
+                  Discover Benefits →
+                </button>
+              </div>
+            </div>
+          </div>
 
-      <!-- Products -->
-      <section id="services" class="py-20 bg-gradient-to-br from-green-900 to-green-700 relative overflow-hidden">
-        <!-- ... keep your original products cards exactly ... -->
-      </section>
+          <div class="luxury-card p-10 rounded-3xl card-hover relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-300/20 to-green-400/20 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10">
+              <div class="text-7xl mb-8 text-center transform group-hover:scale-110 transition-transform duration-300">🍃</div>
+              <div class="text-center mb-6">
+                <div class="inline-block px-4 py-1 bg-gradient-to-r from-green-100 to-green-200 rounded-full text-green-800 text-sm font-semibold mb-4">
+                  WELLNESS BLEND
+                </div>
+                <h3 class="text-3xl font-bold premium-font text-green-800 mb-2">Tulsi + Ginger + Rose Tea</h3>
+                <div class="w-16 h-0.5 bg-gradient-to-r from-green-600 to-green-700 mx-auto"></div>
+              </div>
+              <p class="text-gray-700 mb-8 text-center text-lg leading-relaxed">
+                Our calming herbal tea blend combining the sacred Tulsi, warming Ginger, and soothing Rose petals to create a perfect harmony for relaxation and wellness.
+              </p>
+              <div class="space-y-4 mb-8">
+                <div class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">Sacred Tulsi Base</span></div>
+                <div class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">Warming Ginger Essence</span></div>
+                <div class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">Soothing Rose Petals</span></div>
+              </div>
+              <div class="text-center">
+                <button onclick="showTeaBlendBenefits()" class="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-full font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 premium-shadow">
+                  Explore Blend →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!-- Newsletter -->
-      <section class="py-20 bg-gradient-to-r from-green-600 to-green-700 relative overflow-hidden">
-        <!-- ... keep your original newsletter content exactly ... -->
-      </section>
+    <!-- Newsletter -->
+    <section class="py-20 bg-gradient-to-r from-green-600 to-green-700 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="absolute top-0 left-0 w-full h-full opacity-20">
+        <div class="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-2xl"></div>
+        <div class="absolute bottom-10 right-10 w-32 h-32 bg-green-200 rounded-full blur-2xl"></div>
+      </div>
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="mb-8">
+          <div class="w-20 h-1 gold-accent mx-auto mb-4 rounded-full"></div>
+          <h2 class="text-4xl md:text-5xl font-bold premium-font text-white mb-6">Join Our Herbal Circle</h2>
+          <p class="text-xl text-green-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Be the first to know about new products, ancient wellness wisdom, and exclusive offers from our premium Ayurvedic collection
+          </p>
+        </div>
+        <div class="max-w-lg mx-auto">
+          <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
+            <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-full border-0 focus:outline-none focus:ring-4 focus:ring-green-300/50 text-gray-800 font-medium premium-shadow" required>
+            <button type="submit" class="bg-white text-green-700 px-8 py-4 rounded-full font-bold hover:bg-green-50 transition-all duration-300 transform hover:scale-105 premium-shadow">
+              Join Circle →
+            </button>
+          </form>
+          <p class="text-green-200 text-sm mt-4">✨ Exclusive wellness tips • New product launches • Special member discounts</p>
+        </div>
+      </div>
+    </section>
 
-      <!-- Contact -->
-      <section id="contact" class="py-20 bg-gradient-to-br from-green-50 to-green-100 relative">
-        <!-- ... keep your original contact content exactly ... -->
-      </section>
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-green-50 to-green-100 relative">
+      <div class="absolute inset-0 bg-white/70"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-block mb-6">
+            <div class="w-16 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto mb-3 rounded-full"></div>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-6">Start Your Ayurvedic Journey Today</h2>
+          <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            Ready to embrace natural wellness? We'd love to guide you on your path to holistic health with our premium Ayurvedic solutions.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-16">
+          <div class="luxury-card p-10 rounded-3xl premium-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/20 to-green-300/20 rounded-full -translate-y-16 translate-x-16"></div>
+            <div class="relative z-10">
+              <h3 class="text-3xl font-semibold premium-font text-green-800 mb-8 text-center">Get In Touch</h3>
+              <form id="contact-form" class="space-y-6">
+                <div>
+                  <label class="block text-gray-800 text-lg font-semibold mb-3">Full Name</label>
+                  <input type="text" class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-400 text-gray-800 font-medium" placeholder="Your Full Name">
+                </div>
+                <div>
+                  <label class="block text-gray-800 text-lg font-semibold mb-3">Email Address</label>
+                  <input type="email" class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-400 text-gray-800 font-medium" placeholder="your@email.com">
+                </div>
+                <div>
+                  <label class="block text-gray-800 text-lg font-semibold mb-3">Message</label>
+                  <textarea rows="5" class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-400 text-gray-800 font-medium resize-none" placeholder="Tell us about your wellness goals..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-green-700 to-green-600 text-white py-4 rounded-2xl font-bold hover:from-green-800 hover:to-green-700 transition-all duration-300 transform hover:scale-105 premium-shadow text-lg">
+                  Send Message →
+                </button>
+              </form>
+              <div class="bg-gradient-to-r from-green-100 to-green-200 border border-green-300 text-green-800 px-6 py-4 rounded-2xl mt-6">
+                <div class="flex items-center justify-center space-x-2">
+                  <span class="text-xl">📧</span>
+                  <span class="font-normal">Send us a message and we'll respond within 24 hours.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-8">
+            <div class="luxury-card p-10 rounded-3xl premium-shadow relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/20 to-green-300/20 rounded-full -translate-y-16 translate-x-16"></div>
+              <div class="relative z-10 text-center">
+                <div class="text-6xl mb-6">📧</div>
+                <h3 class="text-2xl font-semibold premium-font text-green-800 mb-4">Email</h3>
+                <p class="text-gray-700 text-xl mb-6">sarvaritam@gmail.com</p>
+                <div class="w-16 h-0.5 bg-gradient-to-r from-green-600 to-green-700 mx-auto mb-6"></div>
+                <div class="text-6xl mb-6">📞</div>
+                <h3 class="text-2xl font-semibold premium-font text-green-800 mb-4">Phone</h3>
+                <p class="text-gray-700 text-xl">+91 9228411223</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!-- Modals (Ashwagandha & Tea) -->
-      <!-- ... keep your original modals exactly ... -->
-
-      <!-- Wellness Footer -->
-      <footer class="bg-gradient-to-br from-green-900 to-green-700 text-white py-16 relative overflow-hidden">
-        <!-- ... keep your original footer content exactly ... -->
-      </footer>
-      <!-- ===== END pasted content from your Index.html ===== -->
+    <!-- Ashwagandha Modal -->
+    <div id="ashwagandha-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4" style="z-index: 9999;">
+      <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto premium-shadow relative">
+        <button onclick="closeAshwagandhaBenefits()" class="absolute top-6 right-6 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-all duration-200 z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div class="p-8">
+          <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-4">Benefits of Ashwagandha</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto rounded-full"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+              <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center"><div class="text-4xl">🧘‍♀️</div></div>
+              <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Reduces Stress & Anxiety</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">Helps regulate the stress response and promotes a calmer state of mind.</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+              <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center"><div class="text-4xl">😴</div></div>
+              <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Improves Sleep</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">Supports deeper, more restorative sleep by calming the mind and body.</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+              <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center"><div class="text-4xl">🏃‍♂️</div></div>
+              <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Boosts Energy Levels</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">Increases stamina and focus throughout the day without jitters.</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+              <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center"><div class="text-4xl">🌿</div></div>
+              <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Supports Immune Function</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">Helps strengthen the immune system and overall vitality.</p>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <div class="bg-gradient-to-r from-green-100 to-green-200 p-6 rounded-2xl border border-green-300">
+              <p class="text-green-800 font-medium mb-2">🌟 Premium Quality Ashwagandha</p>
+              <p class="text-gray-700 text-sm">Traditional Ayurvedic formula crafted for modern wellness needs</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Tea Blend Modal -->
+    <div id="tea-blend-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4" style="z-index: 9999;">
+      <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto premium-shadow relative">
+        <button onclick="closeTeaBlendBenefits()" class="absolute top-6 right-6 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-all duration-200 z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div class="p-8">
+          <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold premium-font bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-4">Benefits of Tulsi, Ginger & Rose Herbal Tea</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto rounded-full"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+              <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center"><div class="text-4xl">🌿</div></div>
+              <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Boosts Immunity</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">Rich in antioxidants to strengthen your body's defense system.</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+              <div class="w-full h-32 bg-gradient-to-br from-pink-200 to-pink-300 rounded-xl mb-4 flex items-center justify-center"><div class="text-4xl">🫚</div></div>
+              <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Aids Digestion</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">Helps soothe the stomach and supports healthy digestion.</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+              <div class="w-full h-32 bg-gradient-to-br from-pink-200 to-pink-300 rounded-xl mb-4 flex items-center justify-center"><div class="text-4xl">🌹</div></div>
+              <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Reduces Stress</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">The calming aroma and herbs help relax the mind.</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 premium-shadow">
+              <div class="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-xl mb-4 flex items-center justify-center"><div class="text-4xl">☕</div></div>
+              <h3 class="text-xl font-bold text-green-800 mb-3 premium-font">Promotes Overall Wellness</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">A refreshing blend that nurtures body and mind.</p>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <div class="bg-gradient-to-r from-green-100 to-pink-100 p-6 rounded-2xl border border-green-300">
+              <p class="text-green-800 font-medium mb-2">🌸 Premium Herbal Tea Blend</p>
+              <p class="text-gray-700 text-sm">Sacred Tulsi, warming Ginger, and soothing Rose petals in perfect harmony</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-green-900 to-green-700 text-white py-16 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="absolute top-0 left-0 w-full h-full opacity-10">
+        <div class="absolute top-10 right-20 w-40 h-40 bg-green-400 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-20 w-32 h-32 bg-green-500 rounded-full blur-3xl"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-4 gap-12">
+          <div class="md:col-span-2">
+            <div class="text-3xl font-bold premium-font mb-2 bg-gradient-to-r from-green-300 to-green-400 bg-clip-text text-transparent">SarvaRitam<sup class="text-xs">™</sup></div>
+            <div class="text-green-300 text-sm font-medium mb-4 tracking-wide">AYURVEDIC WELLNESS</div>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              "The Essence of All That is Right and Natural" - Bringing authentic Ayurvedic wellness solutions for holistic health with the wisdom of ancient traditions.
+            </p>
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center"><span class="text-white font-bold text-lg">🌿</span></div>
+              <div>
+                <div class="text-white font-semibold">Premium Quality</div>
+                <div class="text-gray-400 text-sm">100% Natural & Authentic</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold premium-font text-green-300 mb-6">Our Products</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-gray-300 hover:text-green-300 transition-colors text-lg flex items-center space-x-2"><span>→</span><span>Premium Ashwagandha</span></a></li>
+              <li><a href="#" class="text-gray-300 hover:text-green-300 transition-colors text-lg flex items-center space-x-2"><span>→</span><span>Tulsi + Ginger + Rose Tea</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold premium-font text-green-300 mb-6">Connect With Us</h4>
+            <div class="space-y-4 mb-6">
+              <div class="text-gray-300"><div class="font-semibold">Email</div><div class="text-green-200">sarvaritam@gmail.com</div></div>
+              <div class="text-gray-300"><div class="font-semibold">Phone</div><div class="text-green-200">+91 9228411223</div></div>
+            </div>
+            <div class="flex space-x-4">
+              <button class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform">📘</button>
+              <button class="w-12 h-12 bg-gradient-to-br from-sky-500 to-sky-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform">🐦</button>
+              <button class="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform">📷</button>
+              <button class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 rounded-full flex items-center justify-center hover:scale-110 transition-transform">💼</button>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-green-700/30 mt-12 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div class="text-gray-400 text-center md:text-left"><p>&copy; 2025 SarvaRitam™. All rights reserved.</p></div>
+            <div class="text-green-300 text-sm font-medium">Crafted with 🌿 for your wellness journey</div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </section>
 
-  <!-- ===== Shared Scripts ===== -->
+  <!-- ===== Scripts ===== -->
   <script>
-    // Page Navigation (between views)
-    function showLanding() {
-      toggleView('landing-page');
-      const g = document.getElementById('glass-text'); if (g) g.style.display = 'none';
-      window.scrollTo(0,0);
-    }
-    function showConsulting() {
-      toggleView('consulting-page');
-      const g = document.getElementById('glass-text'); if (g) { g.style.display = 'block'; updateGlassText(); }
-      window.scrollTo(0,0);
-    }
-    function showWellness() {
-      toggleView('wellness-page');
-      const g = document.getElementById('glass-text'); if (g) g.style.display = 'none';
-      window.scrollTo(0,0);
-    }
-    function toggleView(showId){
-      ['landing-page','consulting-page','wellness-page'].forEach(id=>{
-        const el = document.getElementById(id);
+    // View toggles
+    function showLanding(){ toggleView('landing-page'); window.scrollTo(0,0); }
+    function showConsulting(){ toggleView('consulting-page'); window.scrollTo(0,0); }
+    function showWellness(){ toggleView('wellness-page'); window.scrollTo(0,0); }
+    function toggleView(id){
+      ['landing-page','consulting-page','wellness-page'].forEach(s=>{
+        const el = document.getElementById(s);
         if(!el) return;
-        if(id===showId){ el.classList.remove('hidden-section'); el.classList.add('visible-section'); }
+        if(s===id){ el.classList.remove('hidden-section'); el.classList.add('visible-section'); }
         else{ el.classList.remove('visible-section'); el.classList.add('hidden-section'); }
       });
     }
 
-    // Consulting glass text + nav gradient
-    function updateGlassText() {
-      const glassText = document.getElementById('glass-text'); if (!glassText) return;
-      const scrolled = window.pageYOffset;
-      const opacity = Math.max(0.2, 1 - scrolled / 600);
-      glassText.style.opacity = opacity;
-      const hue = Math.min(360, scrolled / 3);
-      glassText.style.background = `linear-gradient(45deg, hsla(${hue},70%,85%,0.9), hsla(${hue+30},60%,75%,0.6))`;
-      glassText.style.webkitBackgroundClip = 'text';
-      glassText.style.backgroundClip = 'text';
-    }
-    window.addEventListener('scroll', () => {
-      const consultingVisible = document.getElementById('consulting-page').classList.contains('visible-section');
-      if (!consultingVisible) return;
-      const scrolled = window.pageYOffset;
-      const navTitle = document.getElementById('nav-title');
-      const hue = Math.min(360, scrolled / 3);
-      navTitle.style.background = `linear-gradient(45deg, hsla(${hue},70%,85%,1), hsla(${hue+60},60%,75%,1))`;
-      navTitle.style.webkitBackgroundClip = 'text';
-      navTitle.style.backgroundClip = 'text';
-      navTitle.style.webkitTextFillColor = 'transparent';
-      updateGlassText();
-    });
-
     // Consulting form handler
-    function handleFormSubmit(event) {
+    function handleFormSubmit(event){
       event.preventDefault();
       const form = event.target;
-      const button = form.querySelector('button[type="submit"]');
-      const originalText = button.textContent;
-      button.textContent = 'Request Submitted Successfully! ✓';
-      button.style.background = 'linear-gradient(45deg, #16a34a, #22c55e)';
-      setTimeout(() => {
-        form.reset();
-        button.textContent = originalText;
-        button.style.background = 'linear-gradient(45deg, #7f1d1d, #991b1b)';
-      }, 3000);
+      const btn = form.querySelector('button[type="submit"]');
+      const t = btn.textContent;
+      btn.textContent = 'Request Submitted Successfully! ✓';
+      btn.style.background = 'linear-gradient(45deg, #16a34a, #22c55e)';
+      setTimeout(()=>{ form.reset(); btn.textContent = t; btn.style.background = 'linear-gradient(45deg, #7f1d1d, #991b1b)'; }, 3000);
     }
 
-    // ===== Wellness (attached code) behaviors =====
-    // mobile menu toggle
+    // Wellness: mobile menu
     (function(){
       const btn = document.getElementById('mobile-menu-btn');
       const menu = document.getElementById('mobile-menu');
-      if (btn && menu) btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+      if(btn && menu){ btn.addEventListener('click', ()=> menu.classList.toggle('hidden')); }
     })();
 
-    // smooth scroll within wellness page
+    // Wellness: smooth scroll helpers
     function wellnessScrollTo(id){
-      const el = document.querySelector('#wellness-root #' + id);
+      const el = document.getElementById(id);
       const navHeight = 64;
-      if (el){
+      if(el){
         const y = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
         window.scrollTo({ top:y, behavior:'smooth' });
       }
     }
-    document.querySelectorAll('#wellness-root a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
+    document.querySelectorAll('#wellness-page a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click', function(e){
         e.preventDefault();
-        wellnessScrollTo(a.getAttribute('href').substring(1));
+        const targetId = this.getAttribute('href').substring(1);
+        wellnessScrollTo(targetId);
         const menu = document.getElementById('mobile-menu');
-        if (menu) menu.classList.add('hidden');
+        if(menu) menu.classList.add('hidden');
       });
     });
 
-    // Modals from wellness
-    function showAshwagandhaBenefits(){ const m = document.getElementById('ashwagandha-modal'); if(!m) return; m.classList.remove('hidden'); m.style.display='flex'; document.body.style.overflow='hidden'; }
-    function closeAshwagandhaBenefits(){ const m = document.getElementById('ashwagandha-modal'); if(!m) return; m.classList.add('hidden'); m.style.display='none'; document.body.style.overflow='auto'; }
-    function showTeaBlendBenefits(){ const m = document.getElementById('tea-blend-modal'); if(!m) return; m.classList.remove('hidden'); m.style.display='flex'; document.body.style.overflow='hidden'; }
-    function closeTeaBlendBenefits(){ const m = document.getElementById('tea-blend-modal'); if(!m) return; m.classList.add('hidden'); m.style.display='none'; document.body.style.overflow='auto'; }
-    document.addEventListener('click', (e)=>{
-      const am = document.getElementById('ashwagandha-modal');
-      const tm = document.getElementById('tea-blend-modal');
-      if (am && e.target === am) closeAshwagandhaBenefits();
-      if (tm && e.target === tm) closeTeaBlendBenefits();
-    });
-    document.addEventListener('keydown', (e)=>{
-      if (e.key === 'Escape'){ closeAshwagandhaBenefits(); closeTeaBlendBenefits(); }
-    });
-
-    // Wellness contact + newsletter forms (mailto like your original)
+    // Wellness: contact + newsletter forms (mailto)
     (function(){
-      const contact = document.querySelector('#wellness-root #contact-form');
-      if (contact){
+      const contact = document.querySelector('#wellness-page #contact-form');
+      if(contact){
         contact.addEventListener('submit', function(e){
           e.preventDefault();
           const name = this.querySelector('input[type="text"]').value;
@@ -573,21 +803,46 @@
           alert('Thank you for your message! Your email client will open to send the message to sarvaritam@gmail.com');
         });
       }
-      const newsletter = document.querySelector('#wellness-root #newsletter-form');
-      if (newsletter){
+      const newsletter = document.querySelector('#wellness-page #newsletter-form');
+      if(newsletter){
         newsletter.addEventListener('submit', function(e){
           e.preventDefault();
           const email = this.querySelector('input[type="email"]').value;
           const subject = encodeURIComponent('Newsletter Signup - SarvaRitam™');
-          const body = encodeURIComponent(`Please add me to the SarvaRitam™ newsletter.\n\nEmail: ${email}\n\nI'm interested in Ayurvedic wellness updates.`);
+          const body = encodeURIComponent(`Please add me to the SarvaRitam™ newsletter.\n\nEmail: ${email}\n\nI'm interested in receiving updates about Ayurvedic wellness products and tips.`);
           window.location.href = `mailto:sarvaritam@gmail.com?subject=${subject}&body=${body}`;
-          alert('Welcome to our herbal circle! Your email client will open to send the subscription request.');
+          alert('Welcome to our herbal circle! Your email client will open to send the subscription request to sarvaritam@gmail.com');
         });
       }
     })();
-  </script>
 
-  <!-- (Optional) Cloudflare snippet removed to avoid duplicate injection in a single-page bundle -->
+    // Wellness: modals
+    function showAshwagandhaBenefits(){
+      const m = document.getElementById('ashwagandha-modal');
+      m.classList.remove('hidden'); m.style.display='flex'; document.body.style.overflow='hidden';
+    }
+    function closeAshwagandhaBenefits(){
+      const m = document.getElementById('ashwagandha-modal');
+      m.classList.add('hidden'); m.style.display='none'; document.body.style.overflow='auto';
+    }
+    function showTeaBlendBenefits(){
+      const m = document.getElementById('tea-blend-modal');
+      m.classList.remove('hidden'); m.style.display='flex'; document.body.style.overflow='hidden';
+    }
+    function closeTeaBlendBenefits(){
+      const m = document.getElementById('tea-blend-modal');
+      m.classList.add('hidden'); m.style.display='none'; document.body.style.overflow='auto';
+    }
+    document.addEventListener('click', (e)=>{
+      const am = document.getElementById('ashwagandha-modal');
+      const tm = document.getElementById('tea-blend-modal');
+      if (am && e.target === am) closeAshwagandhaBenefits();
+      if (tm && e.target === tm) closeTeaBlendBenefits();
+    });
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape'){ closeAshwagandhaBenefits(); closeTeaBlendBenefits(); }
+    });
+  </script>
 </body>
 </html>
 
