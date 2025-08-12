@@ -40,6 +40,69 @@
         .page.active { display: block; }
         .modal { display: none; }
         .modal.active { display: flex; }
+
+        /* ----------------------------- */
+        /* TARGETED TWEAKS YOU REQUESTED */
+        /* ----------------------------- */
+
+        /* 1) Footer text darker for readability */
+        footer .text-white,
+        footer .text-amber-100,
+        footer .text-amber-200,
+        footer .text-amber-300,
+        footer p,
+        footer a,
+        footer span,
+        footer h3,
+        footer h4 {
+            color: #1f2937 !important; /* slate-800 */
+        }
+        footer a:hover { color: #111827 !important; } /* slate-900 */
+
+        /* 2) Consulting page in darkest luxury red + white */
+        /* Deep red gradient for consulting header/CTA blocks that use .premium-gradient */
+        #consulting-page .premium-gradient {
+            background: linear-gradient(135deg, #3a0000 0%, #5a0000 50%, #3a0000 100%) !important;
+        }
+        /* Make header texts white on the new dark red */
+        #consulting-page .premium-gradient .text-amber-900,
+        #consulting-page .premium-gradient .text-amber-800,
+        #consulting-page .premium-gradient .text-amber-700 {
+            color: #ffffff !important;
+        }
+        /* Slightly stronger white for those translucent cards in the header */
+        #consulting-page .premium-gradient .bg-white\/80 {
+            background-color: rgba(255,255,255,0.9) !important;
+        }
+
+        /* Neutralize amber accents on the consulting page to a refined dark red */
+        #consulting-page .text-amber-900,
+        #consulting-page .text-amber-800,
+        #consulting-page .text-amber-700,
+        #consulting-page .text-amber-600 {
+            color: #7f1d1d !important; /* deep red tone on white sections */
+        }
+        #consulting-page [class*="border-amber-"] {
+            border-color: #e5e7eb !important; /* light neutral border */
+        }
+        /* Flatten any amber-ish gradient sections on consulting page to white */
+        #consulting-page section.bg-gradient-to-b {
+            background: #ffffff !important;
+        }
+
+        /* Buttons inside consulting header remain clean on dark red */
+        #consulting-page .premium-gradient button {
+            border-color: #ffffff !important;
+        }
+
+        /* 3) Ayurvedic page title responsive fix (prevent cutting on mobile) */
+        /* The big "SarvaRitam™" title has class text-7xl; clamp it on small screens */
+        @media (max-width: 640px) {
+            #wellness-page h1.text-7xl {
+                font-size: clamp(2.4rem, 10vw, 3rem);
+                line-height: 1.1;
+            }
+        }
     </style>
 </head>
 <body class="font-inter bg-stone-50">
@@ -798,6 +861,7 @@
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96dda7b6434e2ffb',t:'MTc1NDk3NzQwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
