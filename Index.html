@@ -32,27 +32,36 @@
     .modal { display: none; }
     .modal.active { display: flex; }
 
-    /* Footer text darker for readability across the site */
-    footer .text-white,
-    footer .text-amber-100,
-    footer .text-amber-200,
-    footer .text-amber-300,
-    footer p,
-    footer a,
-    footer span,
-    footer h3,
-    footer h4 { color: #1f2937 !important; } /* slate-800 */
-    footer a:hover { color: #111827 !important; } /* slate-900 */
+    /* -------------------- YOUR NEW REQUESTS -------------------- */
 
-    /* Consulting page: darkest luxury red + white */
+    /* Footer: dark red text site-wide */
+    footer,
+    footer * {
+      color: #8B0000 !important; /* dark red */
+    }
+    footer a:hover { color: #6A0000 !important; }
+
+    /* Consulting page: darkest luxury red header */
     #consulting-page .premium-gradient {
       background: linear-gradient(135deg, #3a0000 0%, #5a0000 50%, #3a0000 100%) !important;
     }
+    /* Make header texts white on that dark red */
     #consulting-page .premium-gradient .text-amber-900,
     #consulting-page .premium-gradient .text-amber-800,
-    #consulting-page .premium-gradient .text-amber-700 { color: #ffffff !important; }
-    #consulting-page .premium-gradient .bg-white\/80 { background-color: rgba(255,255,255,.9) !important; }
+    #consulting-page .premium-gradient .text-amber-700 {
+      color: #ffffff !important;
+    }
+    /* Values cards in header: stronger white panel */
+    #consulting-page .premium-gradient .bg-white\/80 {
+      background-color: rgba(255,255,255,.9) !important;
+    }
+    /* VALUES CARDS (Integrity / Excellence / Innovation): force dark red text to avoid washing out */
+    #consulting-page .premium-gradient .bg-white\/80 h3,
+    #consulting-page .premium-gradient .bg-white\/80 p {
+      color: #8B0000 !important; /* dark red */
+    }
 
+    /* Subtle neutralisation of amber accents on consulting page body */
     #consulting-page .text-amber-900,
     #consulting-page .text-amber-800,
     #consulting-page .text-amber-700,
@@ -173,7 +182,7 @@
         </p>
         <div class="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center">
           <button onclick="showPage('consulting-page')" class="w-full sm:w-auto bg-white text-amber-900 px-10 py-4 rounded-lg font-semibold text-lg hover:bg-amber-50 transition-all duration-300 shadow-lg hover:shadow-xl">Business Solutions</button>
-          <button onclick="showPage('wellness-page')" class="w-full sm:w-auto border-2 border-white text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-amber-900 transition-all duration-300">Wellness Solutions</button>
+          <button onclick="showPage('wellness-page')" class="w-full sm:w-auto border-2 border-white text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-900 transition-all duration-300">Wellness Solutions</button>
         </div>
       </div>
     </section>
@@ -646,7 +655,7 @@
     </div>
   </div>
 
-  <!-- Consulting Contact Modal (for Schedule Consultation) -->
+  <!-- Consulting Contact Modal -->
   <div id="consulting-contact-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl">
       <div class="p-6">
@@ -778,6 +787,7 @@
   </script>
 </body>
 </html>
+
 
 
 
